@@ -1,0 +1,1 @@
+Splits documents using strategies suited to each document type, including parent–child relationships and token limits. Preserves context and provenance so retrieved chunks remain useful and traceable.

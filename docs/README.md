@@ -1,0 +1,1 @@
+Contains architecture notes, use-case diagrams, and project design decisions. Keep this documentation aligned with the implementation and record important choices about ingestion, retrieval, and storage here.

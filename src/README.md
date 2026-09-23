@@ -1,0 +1,1 @@
+Contains the RAG application components, organized by responsibility from ingestion through retrieval and answer generation. The folders are a scaffold for future implementation; dependency management remains in the root pyproject.toml and uv.lock files using uv.

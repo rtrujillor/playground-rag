@@ -1,0 +1,1 @@
+Provides exact-match and semantic caching to reduce repeated work, response latency, and language model cost. Cache keys and invalidation should account for relevant model, index, and access-control changes.
