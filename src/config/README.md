@@ -1,0 +1,1 @@
+Loads and validates configuration for models, storage connections, and pipeline settings, combining experiment configuration with environment-specific values and keeping secrets out of committed files.

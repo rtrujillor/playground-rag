@@ -30,20 +30,19 @@ uv python install 3.11
 uv sync
 ```
 
-`uv sync` creates `.venv` and installs the project and its dependencies using `uv.lock`.
+`uv sync` creates `.venv` and installs dependencies using `uv.lock`. The scaffold is
+configured as a non-package project until Python implementation is added.
 
-### 3. Run the baseline command
+### 3. Verify the environment
 
-Run the project's command:
+Check the Python interpreter:
 
 ```sh
-uv run playground-rag
+uv run python --version
 ```
 
-The command above is the configured entry point, but the current checkout does not contain
-its `src/playground_rag` package. Restore or implement the application entry point and align
-the package configuration before using `uv sync` or running the application; the new folders
-currently contain documentation only.
+The folders currently contain documentation only. There is no application command yet;
+packaging and an entry point will be configured when implementation is added.
 
 ### 4. Project structure
 
@@ -53,11 +52,13 @@ configuration will be added during implementation. Dependencies are managed with
 `pyproject.toml` and `uv.lock`, rather than `requirements.txt`.
 
 ```text
+configs/
 data/
   raw/
   parsed/
   eval/
 src/
+  config/
   schemas/
   ingestion/
   chunking/
@@ -76,6 +77,9 @@ src/
   security/
   api/
   pipelines/
+    ingestion/
+    retrieval/
+    generation/
   utils/
 web/
 jobs/

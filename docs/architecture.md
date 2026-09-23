@@ -29,12 +29,16 @@ diagrams belong in later design work.
 
 ## Boundaries
 
-- `src/playground_rag/ingestion/`: future document parsing, normalization, chunking, and
-  provenance work.
-- `src/playground_rag/retrieval/`: future query handling, ranking, filtering, and result
-  presentation work.
-- `src/playground_rag/storage/`: future provider-neutral persistence and similarity-search
-  integrations.
+- `src/ingestion/` and `src/chunking/`: future document parsing, normalization, provenance,
+  and chunking work.
+- `src/query/`, `src/retrieval/`, and `src/rerank/`: future query preparation, search,
+  filtering, result fusion, and reranking work.
+- `src/vectordb/` and `src/lexical/`: future vector and lexical index integrations behind
+  provider-neutral interfaces.
+- `src/generation/`: future grounded answers and source citations.
+- `src/pipelines/`: orchestration of ingestion, retrieval, and generation components.
+- `src/config/`: configuration loading and validation.
+- `configs/`: reusable experiment settings without secrets or credentials.
 - `tests/unit/`: focused behavior tests for individual components.
 - `tests/integration/`: tests spanning multiple project boundaries or external services.
 - `tests/fixtures/`: small, safe, representative inputs used by tests and evaluations.
@@ -49,6 +53,7 @@ operational complexity, cost, portability, and migration effort.
 
 ## Development workflow
 
-The project uses Python 3.11 and `uv` with the committed lockfile. The baseline command is
-`uv run playground-rag`; it must remain runnable without an external service while the scaffold
-is being developed.
+The project uses Python 3.11 and `uv` with the committed lockfile. It is currently a
+documentation-only, non-package project: `uv sync` prepares the environment and
+`uv run python --version` verifies the interpreter. Application packaging and an entry point
+will be added with implementation; no application command exists yet.
