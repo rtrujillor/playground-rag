@@ -1,0 +1,18 @@
+services:
+  web:
+    build:
+      context: .
+      target: development
+    ports:
+      - '127.0.0.1:5173:5173'
+    environment:
+      CI: 'true'
+      VITE_API_BASE_URL: ${VITE_API_BASE_URL:-}
+      WATCH_POLLING: ${WATCH_POLLING:-false}
+    volumes:
+      - .:/app
+      - web_dependencies:/app/node_modules
+    command: sh -c "pnpm install --frozen-lockfile && pnpm dev"
+
+volumes:
+  web_dependencies:

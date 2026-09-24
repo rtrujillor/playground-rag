@@ -1,5 +1,10 @@
 # playground-rag
-Repo to play with different RAG ingestion and retrieval techniques and tools for parse/ocr, extraction, index and search
+
+Project scaffold for experimenting with RAG ingestion and retrieval techniques.
+
+The current feature creates the development foundation only. Document ingestion, retrieval
+behavior, evaluation, answer generation, and vector database selection are planned as later
+features.
 
 ## Getting started with uv
 
@@ -25,17 +30,69 @@ uv python install 3.11
 uv sync
 ```
 
-`uv sync` creates `.venv` and installs the project and its dependencies using `uv.lock`.
+`uv sync` creates `.venv` and installs dependencies using `uv.lock`. The scaffold is
+configured as a non-package project until Python implementation is added.
 
-### 3. Run the project or Python
+### 3. Verify the environment
 
-Run the project's command:
+Check the Python interpreter:
 
 ```sh
-uv run playground-rag
+uv run python --version
 ```
 
-The current starter prints `Hello from playground-rag!`.
+The Python folders currently contain documentation only. The independent Vue website
+is in `src/web/`; see [frontend setup](docs/web-development.md) for local and container commands.
+
+### 4. Project structure
+
+The folder layout follows the RAG project structure reference. Each application and data
+folder includes a short README describing its purpose; Python modules and infrastructure
+configuration will be added during implementation. Dependencies are managed with
+`pyproject.toml` and `uv.lock`, rather than `requirements.txt`.
+
+```text
+configs/
+data/
+  raw/
+  parsed/
+  eval/
+src/
+  config/
+  schemas/
+  ingestion/
+  chunking/
+  embeddings/
+  vectordb/
+  lexical/
+  retrieval/
+  rerank/
+  query/
+  cache/
+  prompts/
+  llm/
+  generation/
+  eval/
+  observability/
+  security/
+  api/
+  pipelines/
+    ingestion/
+    retrieval/
+    generation/
+  utils/
+  web/
+jobs/
+tests/
+  unit/
+  integration/
+  fixtures/
+logs/
+docs/
+```
+
+Existing documentation and dotfiles are preserved. The use-case diagram is in
+`docs/use-cases.drawio`, and architecture notes are in `docs/architecture.md`.
 
 Open the Python interpreter:
 
@@ -54,7 +111,7 @@ python
 
 Exit Python with `exit()`. After activating the environment, run `deactivate` in the shell when finished.
 
-### 4. Manage dependencies
+### 5. Manage dependencies
 
 To add a runtime dependency, for example:
 
@@ -70,15 +127,13 @@ uv add --dev pytest
 
 These commands update `pyproject.toml`, `uv.lock`, and the environment. Commit both dependency files when changing dependencies.
 
-There is currently no `dev` dependency group. Once development dependencies are added, `uv sync` includes them by default; `uv sync --dev` explicitly includes that group. `uv add dev` tries to install a package named `dev`, so use `--dev` followed by a package name when adding development tools.
+There is currently no `dev` dependency group. Once development dependencies are added,
+`uv sync` includes them by default; `uv sync --dev` explicitly includes that group. `uv add
+dev` tries to install a package named `dev`, so use `--dev` followed by a package name when
+adding development tools.
 
+## Future storage decision
 
-PARSE ( OCR ) / EXTRACT
-
-https://www.llamaindex.ai/blog/introducing-extractbench
-
-LITEPARSE
-
-https://github.com/run-llama/liteparse
-
-LLAMAPARSE
+No vector database is selected yet. Future storage work must remain behind the storage
+boundary so the ingestion and retrieval design can be evaluated before choosing a provider.
+See [docs/architecture.md](docs/architecture.md) for the decision criteria.

@@ -1,0 +1,1 @@
+Handles dense vector indexing and search through a database integration, with possible providers such as Qdrant, Pinecone, or Milvus still to be selected. Owns programmatic creation and validation of the collections and indexes required by the configured search strategy.

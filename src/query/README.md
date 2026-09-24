@@ -1,0 +1,1 @@
+Prepares queries through rewriting, routing, multiple query variants, or hypothetical document embeddings (HyDE). Keeps these optional strategies separate so their effect on retrieval quality can be evaluated.

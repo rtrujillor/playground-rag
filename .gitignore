@@ -2,5 +2,8 @@
 .codex/
 .vscode/
 .venv/
-.specify/
-.agents/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.DS_Store

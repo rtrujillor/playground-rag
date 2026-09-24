@@ -1,0 +1,1 @@
+Stores raw source documents, parsed content, and golden evaluation datasets separately from application code. Keep the stages in their respective subfolders so ingestion outputs and evaluation inputs remain easy to identify.

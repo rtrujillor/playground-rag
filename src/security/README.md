@@ -1,0 +1,1 @@
+Handles authentication, chunk-level access controls, and personally identifiable information (PII) redaction. Ensures document access rules are respected throughout ingestion, retrieval, and generation.

@@ -1,0 +1,1 @@
+Contains the RAG application components, organized by responsibility from ingestion through retrieval and answer generation. Python components remain a scaffold with dependencies managed by uv in the root pyproject.toml and uv.lock; the independent Vue application in web/ manages its frontend dependencies with pnpm.
