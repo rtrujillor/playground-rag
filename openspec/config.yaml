@@ -1,4 +1,7 @@
 schema: spec-driven
+context: |
+  Frontend stack and conventions are documented in src/web/README.md.
+  Read that file before planning or implementing frontend changes.
 githubCopilot:
   cloudAgent: true
 

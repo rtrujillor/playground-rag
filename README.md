@@ -41,8 +41,8 @@ Check the Python interpreter:
 uv run python --version
 ```
 
-The folders currently contain documentation only. There is no application command yet;
-packaging and an entry point will be configured when implementation is added.
+The Python folders currently contain documentation only. The independent Vue website
+is in `src/web/`; see [frontend setup](docs/web-development.md) for local and container commands.
 
 ### 4. Project structure
 
@@ -81,7 +81,7 @@ src/
     retrieval/
     generation/
   utils/
-web/
+  web/
 jobs/
 tests/
   unit/
